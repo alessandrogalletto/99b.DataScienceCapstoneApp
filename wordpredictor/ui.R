@@ -8,26 +8,28 @@
 #
 
 library(shiny)
+library(shinythemes)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-
+    theme = shinytheme("cosmo"),
+    tags$hr(),
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
+    titlePanel("Next word predictor"),
+    tags$h4("Alessandro Galletto - 13th January, 2020"),
+    tags$hr(),
+    mainPanel(
+        tags$p(""),
+        tags$h3("Please, enter your text:"),
+        h4(tags$textarea(id = "text_in", rows = 1, cols = 80, "")),
+        actionButton("button_clear",
+                     label = "Clear",
+                     icon = icon("refresh")),
+        tags$p(""),
+        tags$h3("Predicted next word:"),
+        textOutput("txt_out_id1"),
+        textOutput("txt_out_id2"),
+        textOutput("txt_out_id3")
         )
     )
-))
+)
