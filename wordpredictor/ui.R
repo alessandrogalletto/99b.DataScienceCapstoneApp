@@ -21,7 +21,7 @@ shinyUI(fluidPage(
     mainPanel(
         tags$p(""),
         tags$h3("Please, enter your text:"),
-        h4(tags$textarea(id = "text_in", rows = 1, cols = 80, "")),
+        h4(tags$textarea(id = "txt_in", rows = 1, cols = 80, "")),
         actionButton("button_clear",
                      label = "Clear",
                      icon = icon("refresh")),

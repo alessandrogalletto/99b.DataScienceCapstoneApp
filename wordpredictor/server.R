@@ -10,8 +10,14 @@
 library(shiny)
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
-
+shinyServer(function(input, output, session) {
+  
     
-
+    
+      
+    # Clear button
+    observeEvent(input$button_clear, {
+        updateTextInput(session, "txt_in",  value = "")
     })
+    
+})
